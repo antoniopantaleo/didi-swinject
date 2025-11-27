@@ -1,0 +1,24 @@
+{
+  "originHash" : "6fecbcfceec88a1def9620818d36f26e0b3c8313acd7730b0891f47d68a7226e",
+  "pins" : [
+    {
+      "identity" : "didi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/antoniopantaleo/didi.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "c7aaee60255d9c38bccc2e30d763905ec9d3cea9"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "revision" : "b685b549fe4d8ae265fc7a2f27d0789720425d69",
+        "version" : "2.10.0"
+      }
+    }
+  ],
+  "version" : 3
+}

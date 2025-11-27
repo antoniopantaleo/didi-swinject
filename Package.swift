@@ -1,26 +1,58 @@
 // swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "didi-swinject",
+    name: "DidiSwinject",
+    platforms: [
+        .macOS(.v10_13),
+        .iOS(.v12),
+        .tvOS(.v12),
+        .watchOS(.v4),
+        .visionOS(.v1)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "didi-swinject",
-            targets: ["didi-swinject"]
+            name: "DidiSwinject",
+            targets: ["DidiSwinject"]
         ),
     ],
+    dependencies: [
+        .package(
+            url: "https://github.com/antoniopantaleo/didi.git",
+            branch: "develop"
+        ),
+        .package(
+            url: "https://github.com/Swinject/Swinject.git",
+            from: "2.0.0"
+        )
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "didi-swinject"
+            name: "DidiSwinject",
+            dependencies: [
+                .product(name: "Didi", package: "didi"),
+                .product(name: "Swinject", package: "Swinject")
+            ],
+            swiftSettings: .approachableConcurrency
         ),
         .testTarget(
-            name: "didi-swinjectTests",
-            dependencies: ["didi-swinject"]
-        ),
+            name: "DidiSwinjectTests",
+            dependencies: [
+                .product(name: "Didi", package: "didi"),
+                "DidiSwinject",
+            ],
+            swiftSettings: .approachableConcurrency
+        )
     ]
 )
+
+fileprivate extension [SwiftSetting] {
+    static var approachableConcurrency: [SwiftSetting] {
+        [
+            .defaultIsolation(MainActor.self),
+            .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+            .enableUpcomingFeature("InferIsolatedConformances")
+        ]
+    }
+}
