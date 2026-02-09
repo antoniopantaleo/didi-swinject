@@ -19,7 +19,7 @@ Add `didi` to your dependencies:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/antoniopantaleo/didi-swinject.git", from: "2.0.0")
+    .package(url: "https://github.com/antoniopantaleo/didi-swinject.git", from: "3.0.0")
 ]
 ```
 
