@@ -1,13 +1,13 @@
 {
-  "originHash" : "bd76a4f49edf9fb27d46c3163069cb77b62bac1c223e5e856eb203f1bcb4f53a",
+  "originHash" : "49ee1805ef2ae9d88d09fa31e6ac6a549dbbbbd84214cfa715e907ae12695499",
   "pins" : [
     {
       "identity" : "didi",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/antoniopantaleo/didi.git",
       "state" : {
-        "revision" : "0c5b1b0c809ce3afd509f207f7e881d67cb422a3",
-        "version" : "2.0.0"
+        "revision" : "8a5e70307e62465b1349723dcce3646a721f3b43",
+        "version" : "3.0.0"
       }
     },
     {
